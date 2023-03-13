@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="type_amount_hint">اكتب المبلغ هناe</string>
+    <string name="pay">دفع %s د.ك</string>
+    <string name="start_done">منتهي</string>
+</resources>
