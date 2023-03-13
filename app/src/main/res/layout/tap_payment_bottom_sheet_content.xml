@@ -24,6 +24,16 @@
         app:layout_constraintStart_toEndOf="@id/iv_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_payment_for"
+        />
 
     <View
         android:id="@+id/view"
@@ -62,14 +72,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view2">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
         <TextView
             style="@style/AppSmallTextStyle"
+            android:layout_weight="1"
             android:text="@string/select_title" />
 
+            <TextView
+                style="@style/AppSmallTextStyle"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/edit" />
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:id="@+id/rv_payments_type"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="3" />
 
@@ -83,11 +107,27 @@
 
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
         <TextView
             style="@style/AppSmallTextStyle"
-            android:text="@string/we_accept_title"
+            android:text="@string/we_accept_title" />
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/visa_logo"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                />
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
 
-            />
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/master_card_logo"
+                />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/AppButtonStyle"

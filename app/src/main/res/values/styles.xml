@@ -30,4 +30,10 @@
         <item name="android:textColor">@color/gray</item>
         <item name="android:textAllCaps">true</item>
     </style>
+
+    <style name="card_style">
+        <item name="android:layout_width">@dimen/_80sdp</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+        <item name="android:layout_margin">@dimen/_3sdp</item>
+    </style>
 </resources>

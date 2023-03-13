@@ -8,4 +8,5 @@
     <string name="enter_card_title">Or Enter Card</string>
     <string name="we_accept_title">We Accept</string>
     <string name="powered_by_title">Powered By Tap Payment</string>
+    <string name="edit">Edit</string>
 </resources>
