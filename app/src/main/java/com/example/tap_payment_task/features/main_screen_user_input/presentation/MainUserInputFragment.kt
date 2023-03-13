@@ -14,7 +14,6 @@ import com.example.tap_payment_task.utils.morphAndRevert
 
 
 class MainUserInputFragment : Fragment() {
-
     private var _binding: FragmentMainBinding? = null
     private var mainUserInputViewModel = MainUserInputViewModel()
 
@@ -31,6 +30,7 @@ class MainUserInputFragment : Fragment() {
 
         with(_binding) {
             this?.btnPay?.setOnClickListener {
+                clearAmountEditText()
                 btnPay.morphAndRevert(onAnimationEnd = {
                     openTapPaymentBottomSheet()
                 })
@@ -40,10 +40,20 @@ class MainUserInputFragment : Fragment() {
             }
 
             mainUserInputViewModel.amountTyped.observe(requireActivity(), Observer { textTyped ->
-                this?.btnPay?.text = resources.getString(R.string.pay, textTyped)
+                this?.btnPay?.text =
+                    resources.getString(R.string.pay, textTyped, getCurrency(textTyped))
             })
         }
 
+    }
+
+    private fun clearAmountEditText() = _binding?.edAmountText?.text?.clear()
+
+
+    private fun getCurrency(textTyped: String): String {
+        var currency = resources.getString(R.string.currency)
+        if (textTyped.isEmpty()) currency = ""
+        return currency
     }
 
     private fun openTapPaymentBottomSheet() {

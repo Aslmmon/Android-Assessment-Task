@@ -6,6 +6,7 @@
         <item name="android:background">@drawable/button_shape_default_rounded</item>
         <item name="android:layout_margin">@dimen/_20sdp</item>
         <item name="android:layout_height">@dimen/_35sdp</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
     <style name="amountEditTextStyle">
@@ -15,7 +16,7 @@
         <item name="android:imeOptions">actionDone</item>
         <item name="android:inputType">number</item>
         <item name="android:background">@drawable/rounded_edit_text_cornern</item>
-        <item name="android:maxLength">20</item>
+        <item name="android:maxLength">10</item>
         <item name="android:singleLine">true</item>
     </style>
 

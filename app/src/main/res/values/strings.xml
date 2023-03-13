@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Tap payment task</string>
     <string name="type_amount_hint">Type the amount here</string>
-    <string name="pay">Pay %s K.D</string>
+    <string name="pay">Pay %s %s</string>
     <string name="start_done">done</string>
     <string name="title_">Payment For \n <strong>Merchant Testing</strong></string>
     <string name="select_title">Select</string>
@@ -15,4 +15,5 @@
     <string name="settings_title">Settings</string>
     <string name="options">Options</string>
     <string name="checkout_sdk_title">Checkout SDK</string>
+    <string name="currency">K.D</string>
 </resources>

@@ -21,7 +21,6 @@
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/btnPay"
         style="@style/AppButtonStyle"
-        android:fontFamily="sans-serif"
         android:text="@string/pay"
         app:finalCornerAngle="@dimen/_50sdp"
         app:initialCornerAngle="@dimen/_50sdp"
@@ -29,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:spinning_bar_color="@color/white"
+        app:spinning_bar_padding="@dimen/_5sdp"
         app:spinning_bar_width="@dimen/_3sdp" />
 
 
