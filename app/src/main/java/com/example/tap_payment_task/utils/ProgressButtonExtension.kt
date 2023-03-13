@@ -38,7 +38,7 @@ fun CircularProgressButton.morphAndRevert(
 
 private fun defaultColor(context: Context) = ContextCompat.getColor(context, android.R.color.black)
 private fun defaultDoneImage(resources: Resources) =
-    BitmapFactory.decodeResource(resources, R.drawable.ic_pregnant_woman_white_48dp)
+    BitmapFactory.decodeResource(resources, R.drawable.visa_logo)
 
 private fun ProgressButton.morphDoneAndRevert(
     context: Context,
