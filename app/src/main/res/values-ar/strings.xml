@@ -8,4 +8,6 @@
     <string name="we_accept_title">We Accept</string>
     <string name="card_number_title">Card Number</string>
     <string name="mm_yy_title">MM/YY</string>
+    <string name="settings_title">Settings</string>
+    <string name="checkout_sdk_title">Chekckout SDK</string>
 </resources>

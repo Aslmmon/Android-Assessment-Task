@@ -12,4 +12,7 @@
     <string name="card_number_title">Card Number</string>
     <string name="mm_yy_title">MM/YY</string>
     <string name="cvv_title">CVV</string>
+    <string name="settings_title">Settings</string>
+    <string name="options">Options</string>
+    <string name="checkout_sdk_title">Checkout SDK</string>
 </resources>
