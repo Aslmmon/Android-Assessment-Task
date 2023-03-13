@@ -13,10 +13,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(newBase)
-        val newOverride = Configuration(newBase?.resources?.configuration)
-        newOverride.fontScale = 1.0f
-        applyOverrideConfiguration(newOverride)
-    }
 }
