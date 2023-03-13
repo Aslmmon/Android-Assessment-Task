@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -103,11 +105,63 @@
             style="@style/AppSmallTextStyle"
             android:text="@string/enter_card_title" />
 
-        <EditText
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_1sdp"
+            android:id="@+id/card_layout"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            >
 
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:weightSum="3"
+            android:padding="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:inputType="number"
+                android:drawablePadding="@dimen/_3sdp"
+                android:drawableStart="@drawable/credit_card"
+                android:layout_weight="1"
+                android:textSize="@dimen/_12ssp"
+                android:maxLength="14"
+                android:hint="@string/card_number_title"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:inputType="text"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:textSize="@dimen/_12ssp"
+                android:maxLength="5"
+                android:hint="@string/mm_yy_title"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:maxEms="3"
+                android:drawableEnd="@drawable/scan_icon"
+                android:textSize="@dimen/_12ssp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:maxLength="3"
+                android:hint="@string/cvv_title"
+                />
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,3 +198,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.TapPaymentBottomSheetContentBinding
@@ -16,6 +17,12 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
     lateinit var paymentsTypesAdapter: PaymentsTypesAdapter
     lateinit var binding: TapPaymentBottomSheetContentBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogStyle)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

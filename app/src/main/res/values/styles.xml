@@ -43,4 +43,11 @@
         <item name="android:layout_marginTop">@dimen/_10sdp</item>
         <item name="android:layout_marginHorizontal">@dimen/_10sdp</item>
     </style>
+
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
 </resources>

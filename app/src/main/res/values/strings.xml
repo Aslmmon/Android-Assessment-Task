@@ -9,4 +9,7 @@
     <string name="we_accept_title">We Accept</string>
     <string name="powered_by_title">Powered By Tap Payment</string>
     <string name="edit">Edit</string>
+    <string name="card_number_title">Card Number</string>
+    <string name="mm_yy_title">MM/YY</string>
+    <string name="cvv_title">CVV</string>
 </resources>
