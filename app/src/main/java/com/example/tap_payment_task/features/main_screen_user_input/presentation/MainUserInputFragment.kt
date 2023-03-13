@@ -10,7 +10,9 @@ import androidx.lifecycle.Observer
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.FragmentMainBinding
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
+import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
+import java.text.DecimalFormat
 
 
 class MainUserInputFragment : Fragment() {
@@ -36,7 +38,9 @@ class MainUserInputFragment : Fragment() {
                 })
             }
             this?.edAmountText?.doOnTextChanged { text, start, before, count ->
-                mainUserInputViewModel.setAmountWritten(text.toString())
+                mainUserInputViewModel.setAmountWritten(
+                    text.toString().convertToDecimalPlaces() ?: ""
+                )
             }
 
             mainUserInputViewModel.amountTyped.observe(requireActivity(), Observer { textTyped ->
