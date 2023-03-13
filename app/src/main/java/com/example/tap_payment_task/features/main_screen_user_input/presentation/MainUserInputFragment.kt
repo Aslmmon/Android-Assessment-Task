@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.FragmentMainBinding
+import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
 import com.example.tap_payment_task.utils.morphAndRevert
 
 
@@ -31,7 +32,7 @@ class MainUserInputFragment : Fragment() {
         with(_binding) {
             this?.btnPay?.setOnClickListener {
                 btnPay.morphAndRevert(onAnimationEnd = {
-
+                    openTapPaymentBottomSheet()
                 })
             }
             this?.edAmountText?.doOnTextChanged { text, start, before, count ->
@@ -43,6 +44,13 @@ class MainUserInputFragment : Fragment() {
             })
         }
 
+    }
+
+    private fun openTapPaymentBottomSheet() {
+        val tapPaymentBottomSheet = TapPaymentBottomSheet()
+        tapPaymentBottomSheet.apply {
+            show(this@MainUserInputFragment.childFragmentManager, tapPaymentBottomSheet.tag)
+        }
     }
 
     override fun onDestroyView() {

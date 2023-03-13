@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name" translatable="false">Tap payment task</string>
     <string name="type_amount_hint">Type the amount here</string>
-    <string name="pay">Pay %s KD</string>
+    <string name="pay">Pay %s K.D</string>
     <string name="start_done">done</string>
+    <string name="title_">Payment For \n <strong>Merchant Testing</strong></string>
+    <string name="select_title">Select</string>
+    <string name="enter_card_title">Or Enter Card</string>
+    <string name="we_accept_title">We Accept</string>
+    <string name="powered_by_title">Powered By Tap Payment</string>
 </resources>

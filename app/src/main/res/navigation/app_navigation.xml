@@ -10,4 +10,8 @@
         android:name="com.example.tap_payment_task.features.main_screen_user_input.presentation.MainUserInputFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <dialog
+        android:id="@+id/tapPaymentBottomSheet"
+        android:name="com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet"
+        android:label="TapPaymentBottomSheet" />
 </navigation>

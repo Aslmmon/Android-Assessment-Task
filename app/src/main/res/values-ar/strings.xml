@@ -3,4 +3,7 @@
     <string name="type_amount_hint">اكتب المبلغ هناe</string>
     <string name="pay">دفع %s د.ك</string>
     <string name="start_done">منتهي</string>
+    <string name="title_">Payment For \nMerchant Testing</string>
+    <string name="enter_card_title">Or Enter Card</string>
+    <string name="we_accept_title">We Accept</string>
 </resources>
