@@ -5,4 +5,5 @@ import android.widget.Toast
 
 fun Context.showToast(toastMessage: String, toastType: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, toastMessage, toastType).show()
+
 }
