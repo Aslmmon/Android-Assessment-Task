@@ -14,14 +14,17 @@ import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.FragmentMainBinding
 import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
+import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheetViewModel
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 /**
  * Here is the First Screen shown to user to write amount needed to be paid
  * and confirm pay Button with simple animation
  */
+@AndroidEntryPoint
 class MainUserInputFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
 
@@ -30,6 +33,7 @@ class MainUserInputFragment : Fragment() {
      */
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private val mainUserInputViewModel: MainUserInputViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

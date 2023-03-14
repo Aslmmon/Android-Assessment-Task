@@ -1,6 +1,6 @@
 package com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter
 
-import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,7 +47,7 @@ class PaymentsTypesAdapter :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val paymentType = getItem(position)
         with(paymentType) {
-            holder.itemView.findViewById<ImageView>(R.id.iv_payment_type).setImageDrawable(image)
+            //holder.itemView.findViewById<ImageView>(R.id.iv_payment_type).setImageURI(image)
         }
 
     }
@@ -55,4 +55,4 @@ class PaymentsTypesAdapter :
 
 }
 
-data class PaymentTypeData(var id: Int? = null, var image: Drawable?)
+data class PaymentTypeData(var id: Int? = null)

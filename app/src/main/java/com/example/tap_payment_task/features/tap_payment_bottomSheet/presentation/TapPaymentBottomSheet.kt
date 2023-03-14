@@ -9,20 +9,26 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.TapPaymentBottomSheetContentBinding
 import com.example.tap_payment_task.features.SharedViewModel
+import com.example.tap_payment_task.features.main_screen_user_input.presentation.MainUserInputViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter.PaymentTypeData
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter.PaymentsTypesAdapter
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 
+@AndroidEntryPoint
 class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
     lateinit var paymentsTypesAdapter: PaymentsTypesAdapter
     lateinit var binding: TapPaymentBottomSheetContentBinding
     private val sharedViewModel: SharedViewModel by activityViewModels()
+    private val tapPaymentBottomSheetViewModel: TapPaymentBottomSheetViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,11 +68,10 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
                     if (s?.length == 2) {
-                        if(start==2 && before==1 && !s.toString().contains("/")){
-                            edExpiry.setText(""+ s.toString()[0]);
+                        if (start == 2 && before == 1 && !s.toString().contains("/")) {
+                            edExpiry.setText("" + s.toString()[0]);
                             edExpiry.setSelection(1);
-                        }
-                        else {
+                        } else {
                             edExpiry.setText("$s/");
                             edExpiry.setSelection(3);
                         }
@@ -103,23 +108,6 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun initPaymentTypeList(): MutableList<PaymentTypeData> {
-        return mutableListOf<PaymentTypeData>(
-            PaymentTypeData(
-                1,
-                ContextCompat.getDrawable(requireContext(), R.drawable.apple_pay)
-            ),
-            PaymentTypeData(
-                2,
-                ContextCompat.getDrawable(requireContext(), R.drawable.google_pay)
-            ),
-            PaymentTypeData(
-                3,
-                ContextCompat.getDrawable(requireContext(), R.drawable.apple_pay)
-            ),
-            PaymentTypeData(
-                4,
-                ContextCompat.getDrawable(requireContext(), R.drawable.google_pay)
-            )
-        )
+        return tapPaymentBottomSheetViewModel.getPaymentData()
     }
 }

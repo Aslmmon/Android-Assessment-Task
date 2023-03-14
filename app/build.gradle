@@ -2,9 +2,11 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 
 
 }
+
 
 android {
     namespace 'com.example.tap_payment_task'
@@ -14,9 +16,9 @@ android {
         viewBinding true
     }
     kapt {
-        javacOptions {
-            option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
-        }
+//        javacOptions {
+//            option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+//        }
     }
     defaultConfig {
         applicationId "com.example.tap_payment_task"
