@@ -6,18 +6,23 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+/**
+ * ViewModel related to first screen of MainUserInput
+ * with a simple function just to update each character of amount written to be in text
+ * of AppButton
+ */
 @HiltViewModel
 class MainUserInputViewModel @Inject constructor() : ViewModel() {
 
-    private val _amountTyped = MutableLiveData<String>()
-    val amountTyped: LiveData<String> = _amountTyped
+    private val _amountToBePaid = MutableLiveData<String>()
+    val amountToBePaid: LiveData<String> = _amountToBePaid
 
 
-    fun setAmountWritten(amount: String) {
-        _amountTyped.value = amount
+    fun setAmountToBePaid(amount: String) {
+        _amountToBePaid.value = amount
     }
 
     init {
-        setAmountWritten("")
+        setAmountToBePaid("")
     }
 }

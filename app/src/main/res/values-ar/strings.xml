@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="type_amount_hint">اكتب المبلغ هناe</string>
-    <string name="pay">دفع %s% s</string>
+    <string name="type_amount_hint">اكتب المبلغ هنا</string>
+    <string name="pay">دفع %s%s</string>
     <string name="start_done">منتهي</string>
-    <string name="title_">Payment For \nMerchant Testing</string>
-    <string name="enter_card_title">Or Enter Card</string>
-    <string name="we_accept_title">We Accept</string>
-    <string name="card_number_title">Card Number</string>
-    <string name="mm_yy_title">MM/YY</string>
-    <string name="settings_title">Settings</string>
-    <string name="checkout_sdk_title">Chekckout SDK</string>
+    <string name="title_">الدفع مقابل \nاختبار التاجر</string>
+    <string name="enter_card_title">أو أدخل البطاقة</string>
+    <string name="we_accept_title">نحن نقبل</string>
+    <string name="card_number_title">رقم البطاقة</string>
+    <string name="mm_yy_title">شهر / سنة</string>
+    <string name="settings_title">إعدادات</string>
+    <string name="checkout_sdk_title">الدفع SDK</string>
     <string name="currency">د.ك</string>
     <string name="amount_text">%s %s</string>
+    <string name="options">خيارات</string>
+    <string name="cvv_title">CVV</string>
+    <string name="powered_by_title">مدعوم من Tap Payment</string>
+    <string name="edit">تعديل</string>
+    <string name="select_title">يختار</string>
+
+
 </resources>

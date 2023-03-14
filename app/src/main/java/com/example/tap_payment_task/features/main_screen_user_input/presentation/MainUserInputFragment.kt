@@ -1,6 +1,7 @@
 package com.example.tap_payment_task.features.main_screen_user_input.presentation
 
 import android.os.Bundle
+import android.os.LocaleList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +16,18 @@ import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
+import java.util.*
 
-
+/**
+ * Here is the First Screen shown to user to write amount needed to be paid
+ * and confirm pay Button with simple animation
+ */
 class MainUserInputFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
+
+    /**
+     * SharedViewModel used to share data between two fragments (this and TapPaymentBottomSheet)
+     */
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private val mainUserInputViewModel: MainUserInputViewModel by viewModels()
 
@@ -36,6 +45,9 @@ class MainUserInputFragment : Fragment() {
         with(_binding) {
             this?.btnPay?.setOnClickListener {
                 if (isAmountEnterdNotEmpty() == true) {
+                    /**
+                     * After End of Revert Animation , should send Data to TapPaymentBottomSheet && clear EditText of Amount
+                     */
                     btnPay.morphAndRevert(onAnimationEnd = {
                         sharedViewModel.setPaymentAmount(
                             getAmountPaymentTyped(),
@@ -49,15 +61,19 @@ class MainUserInputFragment : Fragment() {
 
             }
             this?.edAmountText?.doOnTextChanged { text, start, before, count ->
-                mainUserInputViewModel.setAmountWritten(
+                /**
+                 * fire event for every character is written to update the text
+                 * in AppButton
+                 */
+                mainUserInputViewModel.setAmountToBePaid(
                     text.toString().convertToDecimalPlaces() ?: ""
                 )
             }
 
 
-            mainUserInputViewModel.amountTyped.observe(requireActivity(), Observer { textTyped ->
-                this?.btnPay?.text =
-                    resources.getString(R.string.pay, textTyped, getCurrency(textTyped))
+            mainUserInputViewModel.amountToBePaid.observe(requireActivity(), Observer { textTyped ->
+                this?.btnPay?.text = String.format(locale= Locale.US,
+                    resources.getString(R.string.pay, textTyped, getCurrency(textTyped)))
             })
         }
 
@@ -70,6 +86,9 @@ class MainUserInputFragment : Fragment() {
 
 
     private fun getCurrency(textTyped: String): String {
+        /**
+         * getting currency needed .
+         */
         var currency = resources.getString(R.string.currency)
         if (textTyped.isEmpty()) currency = ""
         return currency
@@ -83,6 +102,9 @@ class MainUserInputFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        /**
+         * clear any binding related to this Fragment View to avoid memory leak
+         */
         super.onDestroyView()
         _binding = null
     }
