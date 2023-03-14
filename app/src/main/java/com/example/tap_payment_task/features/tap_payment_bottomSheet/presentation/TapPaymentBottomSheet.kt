@@ -14,8 +14,7 @@ import androidx.lifecycle.Observer
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.TapPaymentBottomSheetContentBinding
 import com.example.tap_payment_task.features.SharedViewModel
-import com.example.tap_payment_task.features.main_screen_user_input.presentation.MainUserInputViewModel
-import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter.PaymentTypeData
+import com.example.tap_payment_task.features.tap_payment_bottomSheet.data.model.PaymentSourcesResponse
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter.PaymentsTypesAdapter
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -107,7 +106,7 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
     }
 
-    private fun initPaymentTypeList(): MutableList<PaymentTypeData> {
+    private fun initPaymentTypeList(): MutableList<PaymentSourcesResponse> {
         return tapPaymentBottomSheetViewModel.getPaymentData()
     }
 }

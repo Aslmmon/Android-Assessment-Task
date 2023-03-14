@@ -14,7 +14,6 @@ import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.FragmentMainBinding
 import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
-import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheetViewModel
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
 import dagger.hilt.android.AndroidEntryPoint
