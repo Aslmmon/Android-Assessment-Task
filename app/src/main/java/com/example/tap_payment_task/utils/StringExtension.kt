@@ -1,6 +1,11 @@
 package com.example.tap_payment_task.utils
 
+import android.annotation.SuppressLint
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
 import java.text.DecimalFormat
+
 /**
  *
  * Extension class functions for Strings
@@ -20,5 +25,5 @@ fun String.convertToDecimalPlaces(decimalPlaces: Int = threeDecimalPlaces): Stri
         ""
     }
 
-
 }
+
