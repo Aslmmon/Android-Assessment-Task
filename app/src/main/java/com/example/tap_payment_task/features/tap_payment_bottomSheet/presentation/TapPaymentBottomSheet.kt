@@ -6,7 +6,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -19,8 +18,11 @@ import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentatio
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
 
+/**
+ * Here we have annotation for AndroidEntryPoint for
+ * Hilt Library to be able to inject the viewModel used in this fragment as well .
+ */
 @AndroidEntryPoint
 class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
@@ -32,6 +34,10 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /**
+         * This style provided to adjust view when Keyboard Open to be able
+         * to swipe the bottom sheet while entering data
+         */
         setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogStyle)
 
     }
