@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.FragmentMainBinding
+import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
@@ -18,6 +20,7 @@ import java.text.DecimalFormat
 class MainUserInputFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private var mainUserInputViewModel = MainUserInputViewModel()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +35,16 @@ class MainUserInputFragment : Fragment() {
 
         with(_binding) {
             this?.btnPay?.setOnClickListener {
-                clearAmountEditText()
                 btnPay.morphAndRevert(onAnimationEnd = {
+                    sharedViewModel.setPaymentAmount(
+                        getAmountPaymentTyped(),
+                        getCurrency(getAmountPaymentTyped())
+                    )
                     openTapPaymentBottomSheet()
+                    clearAmountEditText()
+
                 })
+
             }
             this?.edAmountText?.doOnTextChanged { text, start, before, count ->
                 mainUserInputViewModel.setAmountWritten(
@@ -50,6 +59,8 @@ class MainUserInputFragment : Fragment() {
         }
 
     }
+
+    private fun getAmountPaymentTyped() = _binding?.edAmountText?.text.toString()
 
     private fun clearAmountEditText() = _binding?.edAmountText?.text?.clear()
 

@@ -11,4 +11,5 @@
     <string name="settings_title">Settings</string>
     <string name="checkout_sdk_title">Chekckout SDK</string>
     <string name="currency">د.ك</string>
+    <string name="amount_text">%s %s</string>
 </resources>
