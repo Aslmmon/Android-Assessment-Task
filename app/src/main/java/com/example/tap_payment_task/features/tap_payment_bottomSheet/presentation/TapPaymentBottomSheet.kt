@@ -44,11 +44,15 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
         initPaymentTypeList()
         initializeAndSubmitAdapterList()
         sharedViewModel.paymentAmount.observe(requireActivity(), Observer {
-            requireContext().showToast(it.first)
             bindDataToViews(it)
         })
 
-        binding.rvPaymentsType.adapter = paymentsTypesAdapter
+        with(binding) {
+            ivCloseDialog.setOnClickListener {
+                this@TapPaymentBottomSheet.dismiss()
+            }
+            rvPaymentsType.adapter = paymentsTypesAdapter
+        }
 
     }
 

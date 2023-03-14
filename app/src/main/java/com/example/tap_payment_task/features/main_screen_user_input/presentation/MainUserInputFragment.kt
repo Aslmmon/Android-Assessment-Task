@@ -14,7 +14,6 @@ import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
-import java.text.DecimalFormat
 
 
 class MainUserInputFragment : Fragment() {
@@ -35,15 +34,17 @@ class MainUserInputFragment : Fragment() {
 
         with(_binding) {
             this?.btnPay?.setOnClickListener {
-                btnPay.morphAndRevert(onAnimationEnd = {
-                    sharedViewModel.setPaymentAmount(
-                        getAmountPaymentTyped(),
-                        getCurrency(getAmountPaymentTyped())
-                    )
-                    openTapPaymentBottomSheet()
-                    clearAmountEditText()
+                if (isAmountEnterdNotEmpty() == true) {
+                    btnPay.morphAndRevert(onAnimationEnd = {
+                        sharedViewModel.setPaymentAmount(
+                            getAmountPaymentTyped(),
+                            getCurrency(getAmountPaymentTyped())
+                        )
+                        openTapPaymentBottomSheet()
+                        clearAmountEditText()
 
-                })
+                    })
+                }
 
             }
             this?.edAmountText?.doOnTextChanged { text, start, before, count ->
@@ -51,6 +52,7 @@ class MainUserInputFragment : Fragment() {
                     text.toString().convertToDecimalPlaces() ?: ""
                 )
             }
+
 
             mainUserInputViewModel.amountTyped.observe(requireActivity(), Observer { textTyped ->
                 this?.btnPay?.text =
@@ -63,6 +65,7 @@ class MainUserInputFragment : Fragment() {
     private fun getAmountPaymentTyped() = _binding?.edAmountText?.text.toString()
 
     private fun clearAmountEditText() = _binding?.edAmountText?.text?.clear()
+    private fun isAmountEnterdNotEmpty() = _binding?.edAmountText?.text?.isNotEmpty()
 
 
     private fun getCurrency(textTyped: String): String {
