@@ -7,6 +7,7 @@
         <item name="android:layout_margin">@dimen/_20sdp</item>
         <item name="android:layout_height">@dimen/_30sdp</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="amountEditTextStyle">
