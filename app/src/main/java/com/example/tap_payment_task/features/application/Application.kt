@@ -1,4 +1,4 @@
-package com.example.tap_payment_task.features
+package com.example.tap_payment_task.features.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
