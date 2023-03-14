@@ -3,7 +3,7 @@
     <string name="type_amount_hint">Type the amount here</string>
     <string name="pay">Pay %s %s</string>
     <string name="start_done">done</string>
-    <string name="title_">Payment For \n <strong>Merchant Testing</strong></string>
+    <string name="title_">Payment For \n<strong>Merchant Testing</strong></string>
     <string name="select_title">Select</string>
     <string name="enter_card_title">Or Enter Card</string>
     <string name="we_accept_title">We Accept</string>

@@ -1,6 +1,8 @@
 package com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +16,6 @@ import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter.PaymentTypeData
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.adapter.PaymentsTypesAdapter
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
-import com.example.tap_payment_task.utils.showToast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class TapPaymentBottomSheet : BottomSheetDialogFragment() {
@@ -52,6 +53,31 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
                 this@TapPaymentBottomSheet.dismiss()
             }
             rvPaymentsType.adapter = paymentsTypesAdapter
+
+            edExpiry.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(p0: Editable?) {}
+
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//                    if (start == 1 && start+added == 2 && p0?.contains('/') == false) {
+//                        edExpiry.setText("$p0/")
+//                    } else if (start == 3 && start-removed == 2 && p0?.contains('/') == true) {
+//                        edExpiry.setText(p0.toString().replace("/", ""))
+//                    }
+
+                    if (s?.length == 2) {
+                        if(start==2 && before==1 && !s.toString().contains("/")){
+                            edExpiry.setText(""+ s.toString()[0]);
+                            edExpiry.setSelection(1);
+                        }
+                        else {
+                            edExpiry.setText("$s/");
+                            edExpiry.setSelection(3);
+                        }
+                    }
+                }
+            })
         }
 
     }
@@ -61,16 +87,18 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
          * amountWithCurrency first Pair ->> total Amount
          * amountWithCurrency Second Pair ->> Currency
          */
-        binding.tvAmount.text = resources.getString(
+        binding.tvAmount.text = activity?.getString(
             R.string.amount_text,
-            amountWithCurrency.first.convertToDecimalPlaces(),
-            amountWithCurrency.second
+            amountWithCurrency.second,
+            amountWithCurrency.first.convertToDecimalPlaces()
         )
-        binding.btnPayTapPayment.text = resources.getString(
+        binding.btnPayTapPayment.text = activity?.getString(
             R.string.pay,
-            amountWithCurrency.first.convertToDecimalPlaces(),
-            amountWithCurrency.second
+            amountWithCurrency.second,
+            amountWithCurrency.first.convertToDecimalPlaces()
         )
+
+
     }
 
     private fun initializeAndSubmitAdapterList() {
