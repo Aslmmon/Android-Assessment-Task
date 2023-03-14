@@ -65,24 +65,6 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
             }
             rvPaymentsType.adapter = paymentsTypesAdapter
 
-//            edExpiry.addTextChangedListener(object : TextWatcher {
-//                override fun afterTextChanged(p0: Editable?) {}
-//
-//                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-//
-//                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//
-//                    if (s?.length == 2) {
-//                        if (start == 2 && before == 1 && !s.toString().contains("/")) {
-//                            edExpiry.setText("" + s.toString()[0]);
-//                            edExpiry.setSelection(1);
-//                        } else {
-//                            edExpiry.setText("$s/");
-//                            edExpiry.setSelection(3);
-//                        }
-//                    }
-//                }
-//            })
         }
 
     }

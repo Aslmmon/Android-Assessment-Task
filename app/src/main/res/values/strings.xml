@@ -17,4 +17,5 @@
     <string name="checkout_sdk_title">Checkout SDK</string>
     <string name="currency">K.D</string>
     <string name="amount_text">%s %s</string>
+    <string name="item_number_title">1 ITEM | K.D</string>
 </resources>

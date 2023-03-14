@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -41,21 +43,49 @@
         <View
             android:id="@+id/view"
             style="@style/viewStyle"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_payment_for" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tv_amount_linear"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/_10sdp">
         <TextView
             android:id="@+id/tv_amount"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:textSize="@dimen/_24ssp"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_22ssp"
+            android:layout_weight="1.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view"
             tools:text="test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_number_title"
+                android:gravity="center"
+                android:textSize="@dimen/_10ssp"
+                android:layout_weight="0.2"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/button_shape_rounded_gray"
+                android:paddingVertical="@dimen/_3sdp"
+
+                app:drawableEndCompat="@drawable/down_arrow" />
+        </LinearLayout>
 
         <View
             android:id="@+id/view2"
@@ -63,7 +93,7 @@
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_amount" />
+            app:layout_constraintTop_toBottomOf="@id/tv_amount_linear" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -100,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal"
+                tools:listitem="@layout/payment_type_item"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="3" />
 
