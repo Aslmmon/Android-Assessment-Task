@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+
     }
 }
 dependencyResolutionManagement {
@@ -11,6 +12,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+     'com.google.dagger:hilt-android-gradle-plugin:2.44'
+
 }
 rootProject.name = "tap_payment_task"
 include ':app'

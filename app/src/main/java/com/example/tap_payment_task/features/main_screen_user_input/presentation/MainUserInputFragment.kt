@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.tap_payment_task.R
 import com.example.tap_payment_task.databinding.FragmentMainBinding
@@ -18,8 +19,8 @@ import com.example.tap_payment_task.utils.morphAndRevert
 
 class MainUserInputFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
-    private var mainUserInputViewModel = MainUserInputViewModel()
     private val sharedViewModel: SharedViewModel by activityViewModels()
+    private val mainUserInputViewModel: MainUserInputViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -3,8 +3,11 @@ package com.example.tap_payment_task.features.main_screen_user_input.presentatio
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainUserInputViewModel : ViewModel() {
+@HiltViewModel
+class MainUserInputViewModel @Inject constructor() : ViewModel() {
 
     private val _amountTyped = MutableLiveData<String>()
     val amountTyped: LiveData<String> = _amountTyped

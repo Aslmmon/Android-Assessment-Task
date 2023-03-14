@@ -60,11 +60,6 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//                    if (start == 1 && start+added == 2 && p0?.contains('/') == false) {
-//                        edExpiry.setText("$p0/")
-//                    } else if (start == 3 && start-removed == 2 && p0?.contains('/') == true) {
-//                        edExpiry.setText(p0.toString().replace("/", ""))
-//                    }
 
                     if (s?.length == 2) {
                         if(start==2 && before==1 && !s.toString().contains("/")){
