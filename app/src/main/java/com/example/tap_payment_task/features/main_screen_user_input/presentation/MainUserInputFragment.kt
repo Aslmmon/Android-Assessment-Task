@@ -16,6 +16,7 @@ import com.example.tap_payment_task.features.SharedViewModel
 import com.example.tap_payment_task.features.tap_payment_bottomSheet.presentation.TapPaymentBottomSheet
 import com.example.tap_payment_task.utils.convertToDecimalPlaces
 import com.example.tap_payment_task.utils.morphAndRevert
+import com.example.tap_payment_task.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -56,8 +57,8 @@ class MainUserInputFragment : Fragment() {
                             getAmountPaymentTyped(),
                             getCurrency(getAmountPaymentTyped())
                         )
-                        openTapPaymentBottomSheet()
                         clearAmountEditText()
+                        openTapPaymentBottomSheet()
 
                     })
                 }

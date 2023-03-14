@@ -8,6 +8,11 @@ import javax.inject.Inject
 
 const val projectPath = "android.resource://com.example.tap_payment_task/"
 
+/**
+ * Dummy Data act as Fake Repository .
+ * for real one we can have an instance for constructor injection
+ * using remote Api or Local Database cache .
+ */
 class TapPaymentRepositoryImpl @Inject constructor() :
     TapPaymentRepository {
     override fun getPaymentTypes() = mutableListOf<PaymentSourcesResponse>(

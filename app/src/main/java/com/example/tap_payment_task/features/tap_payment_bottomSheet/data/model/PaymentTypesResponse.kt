@@ -5,7 +5,7 @@ import android.net.Uri
 /**
  * here we have 2 cases
  * if  isHaveCardData ->> true  view will be of image + card data
- * if isHaveCardData ->> false view will show only other options to pay with
+ * if isHaveCardData ->> false view will show only other options to pay with Like Google Pay and Apple Pay
  */
 data class PaymentSourcesResponse(
     var id: Int? = null,

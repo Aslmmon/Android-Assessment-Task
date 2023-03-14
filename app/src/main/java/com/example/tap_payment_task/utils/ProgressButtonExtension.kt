@@ -26,10 +26,12 @@ fun CircularProgressButton.morphAndRevert(
     onAnimationEnd: () -> Unit = {}
 ) {
     startAnimation()
+
     Handler().run {
         postDelayed({
-            revertAnimation()
-            onAnimationEnd.invoke()
+            revertAnimation{
+                onAnimationEnd.invoke()
+            }
         }, revertTime)
     }
 

@@ -27,7 +27,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
     lateinit var paymentsTypesAdapter: PaymentsTypesAdapter
-    lateinit var binding: TapPaymentBottomSheetContentBinding
+    var binding: TapPaymentBottomSheetContentBinding? = null
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private val tapPaymentBottomSheetViewModel: TapPaymentBottomSheetViewModel by viewModels()
 
@@ -46,9 +46,9 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = TapPaymentBottomSheetContentBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,10 +60,10 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
         })
 
         with(binding) {
-            ivCloseDialog.setOnClickListener {
+            this?.ivCloseDialog?.setOnClickListener {
                 this@TapPaymentBottomSheet.dismiss()
             }
-            rvPaymentsType.adapter = paymentsTypesAdapter
+            this?.rvPaymentsType?.adapter = paymentsTypesAdapter
 
         }
 
@@ -74,12 +74,12 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
          * amountWithCurrency first Pair ->> total Amount
          * amountWithCurrency Second Pair ->> Currency
          */
-        binding.tvAmount.text = activity?.getString(
+        binding?.tvAmount?.text = activity?.getString(
             R.string.amount_text,
             amountWithCurrency.second,
             amountWithCurrency.first.convertToDecimalPlaces()
         )
-        binding.btnPayTapPayment.text = activity?.getString(
+        binding?.btnPayTapPayment?.text = activity?.getString(
             R.string.pay,
             amountWithCurrency.second,
             amountWithCurrency.first.convertToDecimalPlaces()
@@ -92,6 +92,14 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
         paymentsTypesAdapter = PaymentsTypesAdapter()
         paymentsTypesAdapter.submitList(initPaymentTypeList())
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        /**
+         * clear any binding related to this Fragment View to avoid memory leak
+         */
+        binding = null
     }
 
     private fun initPaymentTypeList(): MutableList<PaymentSourcesResponse> {
