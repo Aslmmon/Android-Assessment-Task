@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="type_amount_hint">اكتب المبلغ هنا</string>
-    <string name="pay">دفع %s%s</string>
+    <string name="pay">دفع %s %s</string>
     <string name="start_done">منتهي</string>
     <string name="title_">الدفع مقابل \nاختبار التاجر</string>
     <string name="enter_card_title">أو أدخل البطاقة</string>
@@ -16,8 +16,8 @@
     <string name="cvv_title">CVV</string>
     <string name="powered_by_title">مدعوم من Tap Payment</string>
     <string name="edit">تعديل</string>
-    <string name="select_title">يختار</string>
-    <string name="item_number_title">1 ITEM | K.D</string>
+    <string name="select_title">إختر</string>
+    <string name="item_number_title">1 قطعه | د.ك</string>
 
 
 </resources>

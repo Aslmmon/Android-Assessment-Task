@@ -40,7 +40,7 @@
     </style>
 
     <style name="card_style">
-        <item name="android:layout_width">@dimen/_80sdp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/_35sdp</item>
 
     </style>
