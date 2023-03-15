@@ -1,0 +1,44 @@
+# Tap Payment Android Task
+
+## What is this project about ? :thinking:
+```diff
+ This project is part of Technical assessment of Tap Payment Task 
+```
+
+
+## Aim project ?  :thinking:
+```diff
+A text field that will take an amount from the user.
+along with  A green button that will change title to PAY X. Where X is reflecting what the user types in
+the textfield , Once the button is clicked:
+1. The button will shrink in width with animation.
+2. The button will show a loader in the middle of the button.
+3.Then after 2 seconds of loading animation a bottom sheet controller will popup slide in
+4.The popup should support Arabic and English. And views will support RTL & LTR
+```
+
+Demo English Task             | Demo Arabic Task
+:-------------------------:|:-------------------------:
+<img src="https://github.com/Aslmmon/android_task/blob/main/app/src/main/res/drawable/english_demo.gif"  width="200" height="450" />  |     <img src="https://github.com/Aslmmon/flutter_mini_samples/blob/main/assets/portfolio/splash_anim.gif"  width="200" height="450" />
+
+
+<!--- 
+
+<p>
+<img src="https://github.com/Aslmmon/android_task/blob/main/app/src/main/res/drawable/arabic_demo.gif"  width="200" height="450" />
+  
+   <em> ** onBoarding Feature ** </em>
+   
+   <em> ** Splash Animated Feature ** </em>
+   
+</p>   
+ --->
+## Technology used  && libraries (for now) ? :thinking:
+- Single Activity Archeticture with Jetpack Navigation graph
+- Hilt for Dependency Injection
+- Clean Archeticture using ViewModel , UseCase , Repository for sepearation of concerns 
+
+## How to use ? :thinking:
+clone and run main branch  as it contains all latest work done && always merged with latest work 
+
+
