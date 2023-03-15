@@ -37,7 +37,7 @@ Demo English Task             | Demo Arabic Task
 - Single Activity Architecture with Jetpack Navigation graph .
 - Hilt for Dependency Injection .
 - Clean Archeticture using ViewModel , UseCase , Repository for separation of concerns .
-- Arabic && English languages support .
+- Arabic && English languages support upon device language  .
 - Light && Dark Mode support . 
 - Usage of Custom views && Library integration .
 - Usage of SharedViewModel to share data between Fragments .
@@ -46,5 +46,10 @@ Demo English Task             | Demo Arabic Task
 
 ## How to use ? :thinking:
 Clone and Run main branch  as it contains all latest work done && always merged with latest work 
+
+## Link for an apk to test ? :thinking: 
+
+https://drive.google.com/file/d/14FTM-AaB2iGqksHjDyTAOjvsFGndwAbq/view?usp=share_link
+
 
 
