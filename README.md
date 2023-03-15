@@ -2,7 +2,7 @@
 
 ## What is this project about ? :boom:
 ```diff
- This project is part of Technical assessment of Tap Payment Task 
+ This project is part of Technical assessment  Task 
 ```
 
 
