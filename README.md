@@ -41,6 +41,8 @@ Demo English Task             | Demo Arabic Task
 - Light && Dark Mode support . 
 - Usage of Custom views && Library integration .
 - Usage of SharedViewModel to share data between Fragments .
+- Usage of Kotlin Extension function to extend functionality of classes .
+- Some inline documentation for some parts of the code . 
 
 ## How to use ? :thinking:
 Clone and Run main branch  as it contains all latest work done && always merged with latest work 
