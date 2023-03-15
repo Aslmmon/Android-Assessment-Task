@@ -22,6 +22,9 @@ class MainUserInputViewModel @Inject constructor() : ViewModel() {
         _amountToBePaid.value = amount
     }
 
+    /**
+     * called on first initialization of viewModel
+     */
     init {
         setAmountToBePaid("")
     }

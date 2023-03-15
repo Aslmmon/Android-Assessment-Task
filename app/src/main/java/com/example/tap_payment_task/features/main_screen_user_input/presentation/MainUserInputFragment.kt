@@ -75,6 +75,10 @@ class MainUserInputFragment : Fragment() {
             }
 
 
+
+            /**
+             * update EveryCharacter written to text of payButton
+             */
             mainUserInputViewModel.amountToBePaid.observe(requireActivity(), Observer { textTyped ->
                 this?.btnPay?.text = String.format(locale= Locale.US,
                     resources.getString(R.string.pay, textTyped, getCurrency(textTyped)))

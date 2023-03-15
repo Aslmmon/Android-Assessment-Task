@@ -53,7 +53,6 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initPaymentTypeList()
         initializeAndSubmitAdapterList()
         sharedViewModel.paymentAmount.observe(requireActivity(), Observer {
             bindDataToViews(it)
@@ -89,6 +88,10 @@ class TapPaymentBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun initializeAndSubmitAdapterList() {
+        /**
+         * Initializing PaymentAdapter that shows list of PaymentTypes
+         * along with it's submission
+         */
         paymentsTypesAdapter = PaymentsTypesAdapter()
         paymentsTypesAdapter.submitList(initPaymentTypeList())
 
