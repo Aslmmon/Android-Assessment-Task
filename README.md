@@ -2,11 +2,11 @@
 
 ## What is this project about ? :boom:
 ```diff
- This project is part of Technical assessment  Task 
+ This project is part of Technical assessment Task 
 ```
 
 
-## Aim project ?  :dizzy:
+## Project description ?  :dizzy:
 ```diff
 A text field that will take an amount from the user.
 along with  A green button that will change title to PAY X. Where X is reflecting what the user types in
